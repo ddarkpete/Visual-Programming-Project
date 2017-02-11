@@ -1,0 +1,9 @@
+c:\users\piotr\documents\visual studio 2015\Projects\ProjektZaliczeniowyPW\ProjektZaliczeniowyPW\bin\Debug\ProjektZaliczeniowyPW.exe.config
+C:\Users\Piotr\documents\visual studio 2015\Projects\ProjektZaliczeniowyPW\ProjektZaliczeniowyPW\bin\Debug\ProjektZaliczeniowyPW.exe
+C:\Users\Piotr\documents\visual studio 2015\Projects\ProjektZaliczeniowyPW\ProjektZaliczeniowyPW\bin\Debug\ProjektZaliczeniowyPW.pdb
+C:\Users\Piotr\documents\visual studio 2015\Projects\ProjektZaliczeniowyPW\ProjektZaliczeniowyPW\obj\Debug\ProjektZaliczeniowyPW.csprojResolveAssemblyReference.cache
+C:\Users\Piotr\documents\visual studio 2015\Projects\ProjektZaliczeniowyPW\ProjektZaliczeniowyPW\obj\Debug\ProjektZaliczeniowyPW.Form3.resources
+C:\Users\Piotr\documents\visual studio 2015\Projects\ProjektZaliczeniowyPW\ProjektZaliczeniowyPW\obj\Debug\ProjektZaliczeniowyPW.Properties.Resources.resources
+C:\Users\Piotr\documents\visual studio 2015\Projects\ProjektZaliczeniowyPW\ProjektZaliczeniowyPW\obj\Debug\ProjektZaliczeniowyPW.csproj.GenerateResource.Cache
+C:\Users\Piotr\documents\visual studio 2015\Projects\ProjektZaliczeniowyPW\ProjektZaliczeniowyPW\obj\Debug\ProjektZaliczeniowyPW.exe
+C:\Users\Piotr\documents\visual studio 2015\Projects\ProjektZaliczeniowyPW\ProjektZaliczeniowyPW\obj\Debug\ProjektZaliczeniowyPW.pdb

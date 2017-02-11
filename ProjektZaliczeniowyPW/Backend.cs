@@ -24,6 +24,7 @@ namespace ProjektZaliczeniowyPW
             }
         }
         public List<CharacterClass> Characters = new List<CharacterClass>();
+        public List<Item> Items = new List<Item>();
 
         public bool MessageForm3 = false;
 

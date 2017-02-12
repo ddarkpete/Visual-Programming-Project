@@ -113,5 +113,6 @@ namespace ProjektZaliczeniowyPW
             form2.Closed += (s, args) => this.Close();
             form2.Show();
         }
+        //W POZOSTALYCH FORMACH ONLOAD DANE TODO i Save/Read postaci
     }
 }

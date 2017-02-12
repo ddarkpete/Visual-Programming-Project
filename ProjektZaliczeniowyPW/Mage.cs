@@ -10,7 +10,7 @@ namespace ProjektZaliczeniowyPW
     {
         private string name;
         private int lvl;
-        private List<Item> Items;
+        public List<Item> Items;
 
         public string Name
         {
@@ -56,6 +56,15 @@ namespace ProjektZaliczeniowyPW
                 Defense += Items[i].Defbonus;
                 Lift += Items[i].Liftbonus;
             }
+        }
+        public double eq_weight()
+        {
+            double sum = 0;
+            foreach(Item it in this.Items)
+            {
+                sum += it.Weight;
+            }
+            return sum;
         }
 
         public Mage(string name_,string description_, int lvl_)

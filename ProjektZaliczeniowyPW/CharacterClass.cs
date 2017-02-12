@@ -42,7 +42,7 @@ namespace ProjektZaliczeniowyPW
             }
         }
 
-        protected double Power
+        public double Power
         {
             get
             {
@@ -55,7 +55,7 @@ namespace ProjektZaliczeniowyPW
             }
         }
 
-        protected double Defense
+        public double Defense
         {
             get
             {
@@ -68,7 +68,7 @@ namespace ProjektZaliczeniowyPW
             }
         }
 
-        protected double Lift
+        public double Lift
         {
             get
             {

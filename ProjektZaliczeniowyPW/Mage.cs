@@ -71,6 +71,7 @@ namespace ProjektZaliczeniowyPW
         {
             Id = CharacterClass.id_;
             CharacterClass.id_++;
+            Ch_type = "mage";
             Description = description_;
             Name = name_;
             Items = new List<Item>();

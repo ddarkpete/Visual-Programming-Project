@@ -36,7 +36,7 @@ namespace ProjektZaliczeniowyPW
             bool parseCheck = Int32.TryParse(Formobject.LVLBox.Text,out _lvl);
             if(parseCheck)
             {
-                if((Formobject.MageRadio.Checked || Formobject.MageRadio.Checked) && (_name != "" 
+                if((Formobject.MageRadio.Checked || Formobject.WariorRadio.Checked) && (_name != "" 
                     || _descript !=""))
                 {
                     if(Formobject.MageRadio.Checked)
@@ -46,7 +46,7 @@ namespace ProjektZaliczeniowyPW
                         Characters.Add(TempMage);
                         Formobject.EditCharacterCombo.Items.Add(TempMage.Name);
                     }
-                    if (Formobject.WariorRadio.Checked)
+                    else if (Formobject.WariorRadio.Checked)
                     {
                         Warior TempWarior = new Warior(_name, _descript, _lvl);
                         TempWarior.lvl_count();

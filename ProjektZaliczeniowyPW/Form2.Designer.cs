@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.SaveItemsButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.MageItemRadio = new System.Windows.Forms.RadioButton();
             this.WariorItemRadio = new System.Windows.Forms.RadioButton();
@@ -72,7 +73,10 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.SaveItemsButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -121,6 +125,16 @@
             this.tabPage1.Size = new System.Drawing.Size(429, 270);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add";
+            // 
+            // SaveItemsButton
+            // 
+            this.SaveItemsButton.Location = new System.Drawing.Point(261, 158);
+            this.SaveItemsButton.Name = "SaveItemsButton";
+            this.SaveItemsButton.Size = new System.Drawing.Size(137, 23);
+            this.SaveItemsButton.TabIndex = 25;
+            this.SaveItemsButton.Text = "Save All Items";
+            this.SaveItemsButton.UseVisualStyleBackColor = true;
+            this.SaveItemsButton.Click += new System.EventHandler(this.SaveItemsButton_Click);
             // 
             // groupBox1
             // 
@@ -176,6 +190,7 @@
             this.LoadItemsButton.TabIndex = 23;
             this.LoadItemsButton.Text = "Load Items";
             this.LoadItemsButton.UseVisualStyleBackColor = true;
+            this.LoadItemsButton.Click += new System.EventHandler(this.LoadItemsButton_Click);
             // 
             // AddItemButton
             // 
@@ -516,20 +531,42 @@
             this.label14.TabIndex = 25;
             this.label14.Text = "Name";
             // 
-            // SaveItemsButton
+            // button1
             // 
-            this.SaveItemsButton.Location = new System.Drawing.Point(261, 158);
-            this.SaveItemsButton.Name = "SaveItemsButton";
-            this.SaveItemsButton.Size = new System.Drawing.Size(137, 23);
-            this.SaveItemsButton.TabIndex = 25;
-            this.SaveItemsButton.Text = "Save All Items";
-            this.SaveItemsButton.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(58, 302);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Characters/Shop";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(240, 302);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(151, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Character Editor";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 329);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form2";
             this.Text = "Item editor";
@@ -591,5 +628,9 @@
         private System.Windows.Forms.ComboBox ItemComboBox;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button SaveItemsButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,8 +34,8 @@ namespace ProjektZaliczeniowyPW
                 && itname_!= "" && itdescription != "" && lboncheck == true && pboncheck == true &&
                 dboncheck == true && wcheck == true)
             {
-                string type_;
-                string reqiuire_;
+                string type_ = "";
+                string reqiuire_ ="";
                 if(PantsRadio.Checked)
                 {
                     type_ = "pants";
@@ -43,7 +44,7 @@ namespace ProjektZaliczeniowyPW
                 {
                     type_ = "hat";
                 }
-                else if(GlovesRadio.Checked)
+                else if(ShoesRadio.Checked)
                 {
                     type_ = "shoes";
                 }
@@ -116,8 +117,8 @@ namespace ProjektZaliczeniowyPW
             if ( itname_ != "" && itdescription != "" && lboncheck == true && pboncheck == true &&
                 dboncheck == true && wcheck == true)
             {
-                string type_;
-                string reqiuire_;
+                string type_="";
+                string reqiuire_="";
                 
                 string propers_ = "Power + " + pbonus_.ToString() + " Lift + " + lbonus_.ToString()
                     + " Defense + " + dbonus_.ToString();
@@ -146,6 +147,71 @@ namespace ProjektZaliczeniowyPW
         {
             Backend.Instance.Items.RemoveAt(items_combo_ind);
             ItemComboBox.Items.RemoveAt(items_combo_ind);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form1 = new Form1();
+            form1.Closed += (s, args) => this.Close();
+            form1.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form3 = new Form3();
+            form3.Closed += (s, args) => this.Close();
+            form3.Show();
+        }
+
+        private void SaveItemsButton_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.ShowDialog();
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            string path = saveFileDialog1.FileName;
+            StreamWriter sw = new StreamWriter(path);
+            sw.WriteLine("{0}",Backend.Instance.Items.Count);
+            foreach(Item it in Backend.Instance.Items)
+            {
+                sw.WriteLine("{0};{1};{2};{3};{4};{5};{6};{7},{8};",it.Name,it.Type,it.Description,it.Powerbonus,it.Defbonus,it.Liftbonus,it.Require_chclass,it.Properties,it.Weight);
+     //(string name_, string type_, string descrip_, double powerb_, double defb_, double liftb_, string requir_, string propers_, int weight_)
+
+
+            }
+            sw.Close();
+
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            string path = openFileDialog1.FileName;
+            StreamReader sr = new StreamReader(path);
+            string no =  sr.ReadLine();
+            int noo;
+            Int32.TryParse(no, out noo);
+            for(int i =0; i <noo;i++)
+            {
+                string data = sr.ReadLine();
+                string[] split = data.Split(';');
+                double powerb, defb, liftb;
+                int weight;
+                Double.TryParse(split[3], out powerb);
+                Double.TryParse(split[4], out defb);
+                Double.TryParse(split[5], out liftb);
+                Int32.TryParse(split[8], out weight);
+                Item Temp = new Item(split[0],split[1],split[2],powerb,defb,liftb,split[6],split[7],weight);
+                Backend.Instance.Items.Add(Temp);
+            }
+            sr.Close();
+        }
+
+        private void LoadItemsButton_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
         }
     }
 }

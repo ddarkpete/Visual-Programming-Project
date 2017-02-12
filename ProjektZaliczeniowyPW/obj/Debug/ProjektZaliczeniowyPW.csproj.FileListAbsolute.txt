@@ -8,3 +8,4 @@ C:\Users\Piotr\documents\visual studio 2015\Projects\ProjektZaliczeniowyPW\Proje
 C:\Users\Piotr\documents\visual studio 2015\Projects\ProjektZaliczeniowyPW\ProjektZaliczeniowyPW\obj\Debug\ProjektZaliczeniowyPW.exe
 C:\Users\Piotr\documents\visual studio 2015\Projects\ProjektZaliczeniowyPW\ProjektZaliczeniowyPW\obj\Debug\ProjektZaliczeniowyPW.pdb
 C:\Users\Piotr\documents\visual studio 2015\Projects\ProjektZaliczeniowyPW\ProjektZaliczeniowyPW\obj\Debug\ProjektZaliczeniowyPW.Form2.resources
+C:\Users\Piotr\documents\visual studio 2015\Projects\ProjektZaliczeniowyPW\ProjektZaliczeniowyPW\obj\Debug\ProjektZaliczeniowyPW.Form1.resources

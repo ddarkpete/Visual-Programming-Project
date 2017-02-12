@@ -49,14 +49,14 @@ namespace ProjektZaliczeniowyPW
             int selected_index = EditCharacterCombo.SelectedIndex;
             selected_index_global = selected_index;
            // Backend.Instance.Characters[selected_index];
-            if(Backend.Instance.Characters[selected_index] is Mage)// zawsze można to zmienić na jakieś pole string w obu klasach
+            if(Backend.Instance.Characters[selected_index].Ch_type == "mage")// zawsze można to zmienić na jakieś pole string w obu klasach
             {
                 Mage TempMage = (Mage)Backend.Instance.Characters[selected_index];
                 NameEditBox.Text = TempMage.Name;
                 DecriptEditBox.Text = TempMage.Description;
                 LVLEditBox.Text = TempMage.Lvl.ToString();
             }
-            else if(Backend.Instance.Characters[selected_index] is Warior)
+            else if(Backend.Instance.Characters[selected_index].Ch_type == "warior")
             {
                 Warior TempWarior = (Warior)Backend.Instance.Characters[selected_index];
                 NameEditBox.Text = TempWarior.Name;
@@ -71,13 +71,13 @@ namespace ProjektZaliczeniowyPW
             bool Check = Int32.TryParse(LVLEditBox.Text, out level);
             if (Check && (DecriptEditBox.Text != "" || NameEditBox.Text != ""))
             {
-                if (Backend.Instance.Characters[selected_index_global] is Mage)// zawsze można to zmienić na jakieś pole string w obu klasach
+                if (Backend.Instance.Characters[selected_index_global].Ch_type == "mage")// zawsze można to zmienić na jakieś pole string w obu klasach
                 {
                     Mage TempMage = new Mage(NameEditBox.Text, DecriptEditBox.Text, level);
                     TempMage.lvl_count();
                     Backend.Instance.Characters[selected_index_global] = TempMage;
                 }
-                else if (Backend.Instance.Characters[selected_index_global] is Warior)
+                else if (Backend.Instance.Characters[selected_index_global].Ch_type == "warior")
                 {
                     Warior TempWarior = new Warior(NameEditBox.Text, DecriptEditBox.Text, level);
                     TempWarior.lvl_count();
@@ -96,6 +96,22 @@ namespace ProjektZaliczeniowyPW
         {
             Backend.Instance.Characters.RemoveAt(selected_index_global);
             EditCharacterCombo.Items.RemoveAt(selected_index_global);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form1 = new Form1();
+            form1.Closed += (s, args) => this.Close();
+            form1.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form2 = new Form2();
+            form2.Closed += (s, args) => this.Close();
+            form2.Show();
         }
     }
 }

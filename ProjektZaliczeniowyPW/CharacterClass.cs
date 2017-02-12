@@ -8,6 +8,7 @@ namespace ProjektZaliczeniowyPW
 {
     abstract class CharacterClass
     {
+        private string ch_type;
         protected int id;
         protected string description;
         protected double power;
@@ -80,6 +81,20 @@ namespace ProjektZaliczeniowyPW
                 lift = value;
             }
         }
+
+        public string Ch_type
+        {
+            get
+            {
+                return ch_type;
+            }
+
+            set
+            {
+                ch_type = value;
+            }
+        }
+
         public abstract void lvl_count();
         public abstract void bonus_count();
     }

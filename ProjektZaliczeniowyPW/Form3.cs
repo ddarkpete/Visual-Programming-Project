@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -112,6 +113,51 @@ namespace ProjektZaliczeniowyPW
             var form2 = new Form2();
             form2.Closed += (s, args) => this.Close();
             form2.Show();
+        }
+
+        private void SaveAllButton_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.ShowDialog();
+        }
+
+        private void LoadButton_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            string path = saveFileDialog1.FileName;
+            StreamWriter sw = new StreamWriter(path);
+            sw.WriteLine("{0}", Backend.Instance.Characters.Count);
+            foreach (CharacterClass charc in Backend.Instance.Characters)
+            {
+                if(charc.Ch_type == "mage")
+                {
+                    Mage Temp = (Mage)charc;
+                    sw.WriteLine("{0};{1};{2};{3}", Temp.Ch_type, Temp.Name, Temp.Description, Temp.Lvl);
+                    sw.WriteLine("{0}", Temp.Items.Count);
+                    foreach(Item it in Temp.Items)
+                    {
+                        sw.WriteLine("{0};{1};{2};{3};{4};{5};{6};{7},{8};", it.Name, it.Type, it.Description, it.Powerbonus, it.Defbonus, it.Liftbonus, it.Require_chclass, it.Properties, it.Weight);
+                    }
+                }
+                if (charc.Ch_type == "warior")
+                {
+                    Warior Temp = (Warior)charc;
+                    sw.WriteLine("{0};{1};{2};{3}", Temp.Ch_type, Temp.Name, Temp.Description, Temp.Lvl);
+                    sw.WriteLine("{0}", Temp.Items.Count);
+                    foreach (Item it in Temp.Items)
+                    {
+                        sw.WriteLine("{0};{1};{2};{3};{4};{5};{6};{7},{8};", it.Name, it.Type, it.Description, it.Powerbonus, it.Defbonus, it.Liftbonus, it.Require_chclass, it.Properties, it.Weight);
+                    }
+                }
+            }
         }
         //W POZOSTALYCH FORMACH ONLOAD DANE TODO i Save/Read postaci
     }

@@ -1,0 +1,24 @@
+4
+mage;stefan mag;wesoly mag stefan;6
+3
+magiczne szorty;pants;szorty dla maga;4;6;3;mage;Power + 4 Lift + 3 Defense + 6,10;
+magiczny kapelutek;hat;kapelusz z ktorego magia sie wylewa;5;5;5;mage;Power + 5 Lift + 5 Defense + 5,21;
+zaczarowana rozdzka;special;najwazniejszy item maga;100;100;100;mage;Power + 100 Lift + 100 Defense + 100,15;
+warior;andrzej warior;bardzo silny wojownik;10
+2
+miecz woja;special;miecz zeby se wojak walczyl;100;100;100;warior;Power + 100 Lift + 100 Defense + 100,100;
+helm woja;hat;helm ktory wspomaga obrone;20;100;0;warior;Power + 20 Lift + 0 Defense + 100,40;
+mage;mag szymon;szymon wesoly mag i dobr kumpel;20
+5
+magiczne szorty;pants;szorty dla maga;4;6;3;mage;Power + 4 Lift + 3 Defense + 6,10,0;
+magiczny kapelutek;hat;kapelusz z ktorego magia sie wylewa;5;5;5;mage;Power + 5 Lift + 5 Defense + 5,21,0;
+magiczne bucisze;shoes;buty dla maga;10;89;61;mage;Power + 10 Lift + 61 Defense + 89,110;
+zaczarowana rozdzka;special;najwazniejszy item maga;100;100;100;mage;Power + 100 Lift + 100 Defense + 100,15;
+magiczne rekawice;gloves;rekawice maga;5;15;10;mage;Power + 5 Lift + 10 Defense + 15,60;
+warior;wojowniczy kuba;wojownik swietny a i kumpel dobry;21
+5
+spodnie woja;pants;spodnie ktore walcza;67;34;21;warior;Power + 67 Lift + 21 Defense + 34,60;
+helm woja;hat;helm ktory wspomaga obrone;20;100;0;warior;Power + 20 Lift + 0 Defense + 100,40;
+rekawice woja;gloves;rekawice zeby sie nie pobrudzic przy walce;20;40;30;warior;Power + 20 Lift + 30 Defense + 40,30;
+buty woja;shoes;buty na stopy dla woja;40;20;34;warior;Power + 40 Lift + 34 Defense + 20,50;
+miecz woja;special;miecz zeby se wojak walczyl;100;100;100;warior;Power + 100 Lift + 100 Defense + 100,100;

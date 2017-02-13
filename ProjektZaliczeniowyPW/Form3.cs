@@ -42,7 +42,20 @@ namespace ProjektZaliczeniowyPW
 
         private void Form3_Load(object sender, EventArgs e)
         {
-           
+           foreach(CharacterClass charac in Backend.Instance.Characters)
+            {
+                if (charac.Ch_type == "mage")// zawsze można to zmienić na jakieś pole string w obu klasach
+                {
+                    Mage TempMage = (Mage)charac;
+                    EditCharacterCombo.Items.Add(TempMage.Name);
+                }
+                else if (charac.Ch_type == "warior")
+                {
+                    Warior TempWarior = (Warior)charac;
+                    EditCharacterCombo.Items.Add(TempWarior.Name);
+                }
+                
+            }
         }
 
         private void EditCharacterCombo_SelectedIndexChanged(object sender, EventArgs e)
@@ -127,7 +140,66 @@ namespace ProjektZaliczeniowyPW
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
-
+            string path = openFileDialog1.FileName;
+            StreamReader sr = new StreamReader(path);
+            string char_no= sr.ReadLine();
+            int charno;
+            Int32.TryParse(char_no, out charno);
+            for(int i =0; i < charno; i++)
+            {
+                string data = sr.ReadLine();
+                string[] split = data.Split(';');
+                if(split[0]=="mage")
+                {
+                    int level;
+                    Int32.TryParse(split[3], out level);
+                    Mage Temp = new Mage(split[1], split[2], level);
+                    Temp.lvl_count();
+                    string items_no = sr.ReadLine();
+                    int itemsno;
+                    Int32.TryParse(items_no, out itemsno);
+                    for (int j = 0; j < itemsno; j++)
+                    {
+                        string data1 = sr.ReadLine();
+                        string[] split1 = data1.Split(';');
+                        double powerb, defb, liftb;
+                        int weight;
+                        Double.TryParse(split1[3], out powerb);
+                        //string element = split[0]
+                        Double.TryParse(split1[4], out defb);
+                        Double.TryParse(split1[5], out liftb);
+                        Int32.TryParse(split1[8], out weight);
+                        Item TempItem = new Item(split1[0], split1[1], split1[2], powerb, defb, liftb, split1[6], split1[7], weight);
+                        Temp.Items.Add(TempItem);
+                    }
+                    Backend.Instance.Characters.Add(Temp);
+                }
+                else if (split[0] == "warior")
+                {
+                    int level;
+                    Int32.TryParse(split[3], out level);
+                    Warior Temp = new Warior(split[1], split[2], level);
+                    Temp.lvl_count();
+                    string items_no = sr.ReadLine();
+                    int itemsno;
+                    Int32.TryParse(items_no, out itemsno);
+                    for (int j = 0; j < itemsno; j++)
+                    {
+                        string data1 = sr.ReadLine();
+                        string[] split1 = data1.Split(';');
+                        double powerb, defb, liftb;
+                        int weight;
+                        Double.TryParse(split1[3], out powerb);
+                        Double.TryParse(split1[4], out defb);
+                        Double.TryParse(split1[5], out liftb);
+                        Int32.TryParse(split1[8], out weight);
+                        Item TempItem = new Item(split1[0], split1[1], split1[2], powerb, defb, liftb, split1[6], split1[7], weight);
+                        Temp.Items.Add(TempItem);
+                    }
+                    Backend.Instance.Characters.Add(Temp);
+                }
+            }
+            sr.Close();
         }
 
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -158,6 +230,7 @@ namespace ProjektZaliczeniowyPW
                     }
                 }
             }
+            sw.Close();
         }
         //W POZOSTALYCH FORMACH ONLOAD DANE TODO i Save/Read postaci
     }

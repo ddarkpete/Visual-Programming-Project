@@ -570,6 +570,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Form2";
             this.Text = "Item editor";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

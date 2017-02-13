@@ -130,15 +130,20 @@ namespace ProjektZaliczeniowyPW
 
         private void TestButton_Click(object sender, EventArgs e)
         {
+            foreach (var series in chart1.Series)
+            {
+                series.Points.Clear();
+            }
             if (Backend.Instance.Characters[selected_character].Ch_type == "mage")
             {
                 Mage Temp = (Mage)Backend.Instance.Characters[selected_character];
+                
                 this.chart1.Series["PPoints"].Points.AddXY(Temp.Name, Temp.Power);
                 this.chart1.Series["PPoints After"].Points.AddXY(Temp.Name, Temp.Power + actualitem.Powerbonus);
                 this.chart1.Series["LPoints"].Points.AddXY(Temp.Name, Temp.Lift);
-                this.chart1.Series["LPoints After"].Points.AddXY(Temp.Name, Temp.Power + actualitem.Liftbonus);
+                this.chart1.Series["LPoints After"].Points.AddXY(Temp.Name, Temp.Lift + actualitem.Liftbonus);
                 this.chart1.Series["DPoints"].Points.AddXY(Temp.Name, Temp.Defense);
-                this.chart1.Series["DPoints After"].Points.AddXY(Temp.Name, Temp.Power + actualitem.Defbonus);
+                this.chart1.Series["DPoints After"].Points.AddXY(Temp.Name, Temp.Defense + actualitem.Defbonus);
 
 
             }

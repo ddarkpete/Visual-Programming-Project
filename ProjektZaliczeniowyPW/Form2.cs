@@ -213,5 +213,13 @@ namespace ProjektZaliczeniowyPW
         {
             openFileDialog1.ShowDialog();
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            foreach(Item it in Backend.Instance.Items)
+            {
+                ItemComboBox.Items.Add(it.Name);
+            }
+        }
     }
 }

@@ -193,6 +193,11 @@ namespace ProjektZaliczeniowyPW
                     MessageBox.Show(mess);
                 }
             }
+            else
+            {
+                string mess = "This character cant hold this item";
+                MessageBox.Show(mess);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
